@@ -1,62 +1,61 @@
 // Create Variables
 var currentDayElement = moment().format('MMMM Do YYYY');
 // Created Objects - containing the time and assign a value
-var calendlyTimes = [
+var calendarTimes = [
     {
-      normalTime: "8:00 AM",
+      timesOnCalendar: "8:00 AM",
     },
   
     {
-      normalTime: "9:00 AM",
+      timesOnCalendar: "9:00 AM",
     },
   
     {
-      normalTime: "10:00 AM",
+      timesOnCalendar: "10:00 AM",
     },
   
     {
-      normalTime: "11:00 AM",
+      timesOnCalendar: "11:00 AM",
     },
   
     {
-      normalTime: "12:00 PM",
-
+      timesOnCalendar: "12:00 PM",
     },
   
     {
-      normalTime: "1:00 PM",
+      timesOnCalendar: "1:00 PM",
     },
   
     {
-      normalTime: "2:00 PM",
+      timesOnCalendar: "2:00 PM",
     },
   
     {
-      normalTime: "3:00 PM",
+      timesOnCalendar: "3:00 PM",
     },
   
     {
-      normalTime: "4:00 PM",
+      timesOnCalendar: "4:00 PM",
     },
   
     {
-      normalTime: "5:00 PM",
+      timesOnCalendar: "5:00 PM",
     },
   
     {
-      normalTime: "6:00 PM",
+      timesOnCalendar: "6:00 PM",
     },
   
     {
-      normalTime: "7:00 PM",
+      timesOnCalendar: "7:00 PM",
     },
   
     {
-      normalTime: "8:00 PM",
+      timesOnCalendar: "8:00 PM",
     },
   
     {
-      normalTime: "9:00 PM",
+      timesOnCalendar: "9:00 PM",
     },
   ];
 
