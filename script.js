@@ -81,12 +81,12 @@ for (let i = 0; i < calendarTimes.length; i++) {
   hourSection.addClass("hour col-2");
   hourSection.text(calendarHours);
   // Create button and assign saveBtn class from CSS
-  var newBtn = $("<button>");
-  newBtn.addClass("saveBtn col-1 fab fa-reddit fa-3x");
-  newBtn.addClass("saveBtn i:hover");
   // Create input area and assign
   var textInput = $("<input>");
   textInput.addClass("textarea col-9");
+  var newBtn = $("<button>");
+  newBtn.addClass("saveBtn col-1 fab fa-reddit fa-3x");
+  newBtn.addClass("saveBtn i:hover");
 
 
 
@@ -95,5 +95,5 @@ for (let i = 0; i < calendarTimes.length; i++) {
   // Append the `newRow` to `timeblock`
   timeBlocks.append(newRow);
   // Append the new elements to the `newRow`
-  newRow.append(hourSection, newBtn, textInput);
+  newRow.append(hourSection, textInput, newBtn);
 }
