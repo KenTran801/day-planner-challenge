@@ -2,7 +2,7 @@
 // Current day variable
 var currentDayElement = moment().format('MMMM Do YYYY');
 // Current time variable
-var currentTime =Number(moment().format('HH'));
+var currentTime = Number(moment().format('HH'));
 console.log(currentTime)
 // Created Objects - containing the time and assign a value
 var calendarTimes = [
@@ -80,11 +80,13 @@ for (let i = 0; i < calendarTimes.length; i++) {
   var hourSection = $("<div>");
   hourSection.addClass("hour col-2");
   hourSection.text(calendarHours);
-  // Create button and asign saveBtn class from CSS
+  // Create button and assign saveBtn class from CSS
   var newBtn = $("<button>");
   newBtn.addClass("saveBtn col-1 fab fa-reddit fa-3x");
   newBtn.addClass("saveBtn i:hover");
-
+  // Create input area and assign
+  var textInput = $("<input>");
+  textInput.addClass("textarea col-9");
 
 
 
@@ -93,5 +95,5 @@ for (let i = 0; i < calendarTimes.length; i++) {
   // Append the `newRow` to `timeblock`
   timeBlocks.append(newRow);
   // Append the new elements to the `newRow`
-  newRow.append(hourSection, newBtn);
+  newRow.append(hourSection, newBtn, textInput);
 }
