@@ -1,5 +1,9 @@
 // Create Variables
+// Current day variable
 var currentDayElement = moment().format('MMMM Do YYYY');
+// Current time variable
+var currentTime =Number(moment().format('HH'));
+console.log(currentTime)
 // Created Objects - containing the time and assign a value
 var calendarTimes = [
   {
