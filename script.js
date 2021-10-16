@@ -63,4 +63,11 @@ var calendarTimes = [
 $("#currentDay").append(currentDayElement);
 
 // Create for loop that generates the timeblocks (rows, hour column, text input column, and button column)
-
+for (let i = 0; i < calendarTimes.length; i++) {
+  // Create varialbles for the calendar time
+  var calendarHours = calendarTimes[i].timesOnCalendar;
+  
+  // create time block div and assign class from css
+  var timeBlocks = $("<div>");
+  timeBlocks.addClass("time-block");
+}
