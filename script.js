@@ -76,10 +76,18 @@ for (let i = 0; i < calendarTimes.length; i++) {
   var hourSection = $("<div>");
   hourSection.addClass("hour col-2");
   hourSection.text(calendarHours);
+  // Create button and asign saveBtn class from CSS
+  var newBtn = $("<button>");
+  newBtn.addClass("saveBtn col-1 fab fa-reddit fa-3x");
+  newBtn.addClass("saveBtn i:hover");
+
+
+
+
   // Append the `timeblocks`to 'class=container' in the HTML
   $(".container").append(timeBlocks);
   // Append the `newRow` to `timeblock`
   timeBlocks.append(newRow);
   // Append the new elements to the `newRow`
-  newRow.append(hourSection);
+  newRow.append(hourSection, newBtn);
 }
