@@ -8,58 +8,72 @@ console.log(currentTime)
 var calendarTimes = [
   {
     timesOnCalendar: "8:00 AM",
+    value: 8,
   },
 
   {
     timesOnCalendar: "9:00 AM",
+    value: 9,
   },
 
   {
     timesOnCalendar: "10:00 AM",
+    value: 10,
   },
 
   {
     timesOnCalendar: "11:00 AM",
+    value: 11,
   },
 
   {
     timesOnCalendar: "12:00 PM",
+    value: 12,
   },
 
   {
     timesOnCalendar: "1:00 PM",
+    value: 13,
   },
 
   {
     timesOnCalendar: "2:00 PM",
+    value: 14,
   },
 
   {
     timesOnCalendar: "3:00 PM",
+    value: 15,
   },
 
   {
     timesOnCalendar: "4:00 PM",
+    value: 16,
   },
 
   {
     timesOnCalendar: "5:00 PM",
+    value: 17,
   },
 
   {
     timesOnCalendar: "6:00 PM",
+    value: 18,
   },
 
   {
     timesOnCalendar: "7:00 PM",
+    value: 19,
   },
 
   {
     timesOnCalendar: "8:00 PM",
+    value: 20,
   },
 
   {
     timesOnCalendar: "9:00 PM",
+    value: 21,
   },
 ];
 
@@ -68,8 +82,10 @@ $("#currentDay").append(currentDayElement);
 
 // Create for loop that generates the timeblocks (rows, hour column, text input column, and button column)
 for (let i = 0; i < calendarTimes.length; i++) {
-  // Create varialbles for the calendar time
+  // Create varialble for the calendar time
   var calendarHours = calendarTimes[i].timesOnCalendar;
+  // Create variable to assign a value to the hour/time
+  var timeValue = calendarTimes[i].value;
   // create time block div and assign class from CSS
   var timeBlocks = $("<div>");
   timeBlocks.addClass("time-block");
@@ -81,12 +97,20 @@ for (let i = 0; i < calendarTimes.length; i++) {
   hourSection.addClass("hour col-2");
   hourSection.text(calendarHours);
   // Create button and assign saveBtn class from CSS
-  // Create input area and assign
-  var textInput = $("<input>");
-  textInput.addClass("textarea col-9");
   var newBtn = $("<button>");
   newBtn.addClass("saveBtn col-1 fab fa-reddit fa-3x");
   newBtn.addClass("saveBtn i:hover");
+  // Create input area and assign
+  var textInput = $("<input>");
+  textInput.addClass("textarea col-9");
+  // populate the row color provided from CSS classes (past, present, future). 
+  if (timeValue < currentTime) {
+    textInput.addClass("past");
+  } else if (timeValue === currentTime) {
+    textInput.addClass("present");
+  } else if (timeValue > currentTime) {
+    textInput.addClass("future");
+  };
 
 
 
