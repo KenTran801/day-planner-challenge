@@ -76,10 +76,8 @@ var calendarTimes = [
     value: 21,
   },
 ];
-
 // Diaplsy current date
 $("#currentDay").append(currentDayElement);
-
 // Create for loop that generates the timeblocks (rows, hour column, text input column, and button column)
 for (let i = 0; i < calendarTimes.length; i++) {
   // Create varialble for the calendar time
