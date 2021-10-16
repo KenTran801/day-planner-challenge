@@ -3,7 +3,6 @@
 var currentDayElement = moment().format('MMMM Do YYYY');
 // Current time variable
 var currentTime = Number(moment().format('HH'));
-console.log(currentTime)
 // Created Objects - containing the time and assign a value
 var calendarTimes = [
   {
@@ -98,9 +97,14 @@ for (let i = 0; i < calendarTimes.length; i++) {
   var newBtn = $("<button>");
   newBtn.addClass("saveBtn col-1 fab fa-reddit fa-3x");
   newBtn.addClass("saveBtn i:hover");
+  newBtn.attr("data-hour", timeValue)
   // Create input area and assign
   var textInput = $("<input>");
   textInput.addClass("textarea col-9");
+  // Adding ID to textInput
+  textInput.attr("id", timeValue);
+  // Pull in data from local storage to save users inpits
+  textInput.val(JSON.parse(localStorage.getItem(timeValue)));
   // populate the row color provided from CSS classes (past, present, future). 
   if (timeValue < currentTime) {
     textInput.addClass("past");
@@ -109,9 +113,13 @@ for (let i = 0; i < calendarTimes.length; i++) {
   } else if (timeValue > currentTime) {
     textInput.addClass("future");
   };
-
-
-
+  // Click event to store user input
+  newBtn.on("click", function (event) {
+    event.preventDefault();
+    // Assistance from TA, was able to create code to store user input in local storage
+    var eventInput = $("#"+$(this).attr("data-hour")).val();
+    localStorage.setItem($(this).attr("data-hour"), JSON.stringify(eventInput));
+  });
   // Append the `timeblocks`to 'class=container' in the HTML
   $(".container").append(timeBlocks);
   // Append the `newRow` to `timeblock`
